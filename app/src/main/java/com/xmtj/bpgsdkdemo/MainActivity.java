@@ -8,6 +8,12 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.xmtj.bpgdecoder.BPG;
 import com.xmtj.bpgsdkdemo.activity.ComicViewAcitivity;
 
+/**
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

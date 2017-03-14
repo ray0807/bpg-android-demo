@@ -9,9 +9,10 @@ import android.util.Log;
 import android.view.WindowManager;
 
 /**
- * 屏幕尺寸转换的工具类；
- *
- * @author 汪雷
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc 屏幕尺寸转换的工具类；
  */
 public class DisplayUtil {
 

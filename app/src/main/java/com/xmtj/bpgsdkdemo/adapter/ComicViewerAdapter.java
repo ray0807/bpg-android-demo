@@ -1,6 +1,5 @@
 package com.xmtj.bpgsdkdemo.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
@@ -23,9 +22,11 @@ import com.xmtj.bpgsdkdemo.utils.ViewHolder;
 
 
 /**
- * Created by wanglei on 08/03/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc viewholder；
  */
-
 public class ComicViewerAdapter extends BaseAdapter {
     private Context context;
     private String datas[];

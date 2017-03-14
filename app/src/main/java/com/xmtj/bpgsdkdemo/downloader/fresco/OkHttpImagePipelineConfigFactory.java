@@ -7,7 +7,10 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import okhttp3.OkHttpClient;
 
 /**
- * Created by wanglei on 08/03/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
  */
 
 public class OkHttpImagePipelineConfigFactory {

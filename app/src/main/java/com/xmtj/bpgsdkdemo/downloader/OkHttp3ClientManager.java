@@ -11,7 +11,10 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 
 /**
- * Created by wanglei on 09/03/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
  */
 
 public class OkHttp3ClientManager {

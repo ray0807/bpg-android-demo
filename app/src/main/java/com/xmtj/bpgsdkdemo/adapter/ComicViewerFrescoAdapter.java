@@ -23,7 +23,10 @@ import com.xmtj.bpgsdkdemo.utils.ViewHolder;
 
 
 /**
- * Created by wanglei on 08/03/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
  */
 
 public class ComicViewerFrescoAdapter extends BaseAdapter {

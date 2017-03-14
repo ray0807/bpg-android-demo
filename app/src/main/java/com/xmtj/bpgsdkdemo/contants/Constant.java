@@ -1,7 +1,10 @@
 package com.xmtj.bpgsdkdemo.contants;
 
 /**
- * Created by wanglei on 08/02/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
  */
 
 public class Constant {

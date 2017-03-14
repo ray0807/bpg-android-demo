@@ -35,7 +35,10 @@ import okio.Okio;
 import okio.Source;
 
 /**
- * Created by wanglei on 09/03/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
  */
 
 public class PicassoOk3Downloader implements Downloader {

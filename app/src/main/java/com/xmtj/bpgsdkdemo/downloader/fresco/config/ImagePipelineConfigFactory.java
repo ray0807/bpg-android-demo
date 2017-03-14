@@ -9,16 +9,16 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.decoder.SimpleProgressiveJpegConfig;
 import com.facebook.imagepipeline.listener.RequestListener;
 import com.facebook.imagepipeline.listener.RequestLoggingListener;
-import com.xmtj.bpgsdkdemo.App;
 import com.xmtj.bpgsdkdemo.downloader.OkHttp3ClientManager;
 import com.xmtj.bpgsdkdemo.downloader.fresco.OkHttpImagePipelineConfigFactory;
 
-import okhttp3.OkHttpClient;
-
-
 /**
- * Frescoͼ init config
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc Frescoͼ init config
  */
+
 public class ImagePipelineConfigFactory {
 
     private static ImagePipelineConfig sImagePipelineConfig;

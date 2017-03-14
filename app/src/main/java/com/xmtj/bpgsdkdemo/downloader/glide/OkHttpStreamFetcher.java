@@ -8,7 +8,6 @@ import com.bumptech.glide.load.data.DataFetcher;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.xmtj.bpgdecoder.DecoderWrapper;
 import com.xmtj.bpgdecoder.constant.Constants;
-import com.xmtj.bpgsdkdemo.App;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -16,9 +15,7 @@ import java.io.InputStream;
 import java.util.Map;
 
 import okhttp3.Call;
-import okhttp3.FormBody;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 

@@ -1,19 +1,16 @@
 package com.xmtj.bpgsdkdemo.downloader.fresco;
 
 import android.net.Uri;
-import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Log;
 
 import com.facebook.common.logging.FLog;
 import com.facebook.imagepipeline.image.EncodedImage;
 import com.facebook.imagepipeline.producers.BaseNetworkFetcher;
-import com.facebook.imagepipeline.producers.BaseProducerContextCallbacks;
 import com.facebook.imagepipeline.producers.Consumer;
 import com.facebook.imagepipeline.producers.FetchState;
 import com.facebook.imagepipeline.producers.ProducerContext;
 import com.nostra13.universalimageloader.core.assist.ContentLengthInputStream;
-import com.xmtj.bpgdecoder.BPG;
 import com.xmtj.bpgdecoder.DecoderWrapper;
 import com.xmtj.bpgdecoder.constant.Constants;
 import com.xmtj.bpgsdkdemo.App;
@@ -24,20 +21,19 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import okhttp3.CacheControl;
 import okhttp3.Call;
-import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- * Created by wanglei on 08/03/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
  */
 
 public class OkHttpNetworkFetcher extends

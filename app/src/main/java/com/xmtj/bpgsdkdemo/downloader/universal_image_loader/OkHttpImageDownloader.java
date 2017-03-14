@@ -17,7 +17,6 @@ package com.xmtj.bpgsdkdemo.downloader.universal_image_loader;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.util.Log;
 
 import com.nostra13.universalimageloader.core.assist.ContentLengthInputStream;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;

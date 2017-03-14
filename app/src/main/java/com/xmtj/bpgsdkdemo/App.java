@@ -18,7 +18,10 @@ import com.xmtj.bpgsdkdemo.downloader.universal_image_loader.OkHttpImageDownload
 
 
 /**
- * Created by wanglei on 08/03/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc Application
  */
 
 public class App extends Application {
@@ -40,9 +43,9 @@ public class App extends Application {
     }
 
     private void init(Context context) {
-        packageName =context.getPackageName();
+        packageName = context.getPackageName();
         try {
-            token =context.getPackageManager()
+            token = context.getPackageManager()
                     .getApplicationInfo(context.getPackageName(),
                             PackageManager.GET_META_DATA).metaData.getString(Constants.METADATE_TAG);
         } catch (PackageManager.NameNotFoundException e) {

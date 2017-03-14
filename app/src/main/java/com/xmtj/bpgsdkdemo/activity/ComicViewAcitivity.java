@@ -9,11 +9,12 @@ import com.xmtj.bpgsdkdemo.adapter.ComicViewerAdapter;
 import com.xmtj.bpgsdkdemo.adapter.ComicViewerFrescoAdapter;
 import com.xmtj.bpgsdkdemo.widget.ScrollZoomListView;
 
-
 /**
- * Created by wanglei on 08/02/17.
+ * @author ray
+ * @time 2017-03-14
+ * @github https://github.com/ray0807
+ * @desc
  */
-
 public class ComicViewAcitivity extends Activity {
 
     public static final String TYPE_TAG = "ComicViewAcitivity";
