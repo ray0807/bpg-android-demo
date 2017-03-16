@@ -11,6 +11,7 @@ import com.facebook.imagepipeline.producers.Consumer;
 import com.facebook.imagepipeline.producers.FetchState;
 import com.facebook.imagepipeline.producers.ProducerContext;
 import com.nostra13.universalimageloader.core.assist.ContentLengthInputStream;
+import com.xmtj.bpgdecoder.BPG;
 import com.xmtj.bpgdecoder.DecoderWrapper;
 import com.xmtj.bpgdecoder.constant.Constants;
 import com.xmtj.bpgsdkdemo.App;
@@ -100,11 +101,12 @@ public class OkHttpNetworkFetcher extends
 //                    .add("app_key", App.token)
 //                    .add("image", uri.toString())
 //                    .build();
+            String timestamp = System.currentTimeMillis() / 1000 + "";
             Request request = new Request.Builder()
                     .cacheControl(new CacheControl.Builder().build())
 //                    .url(Constants.GET_SMALLER_IAMGE_URL)
 //                    .post(requestBody)
-                    .url(Constants.GET_SMALLER_IAMGE_URL + "?app_name=" + App.packageName + "&app_key=" + App.token + "&image=" + uri.toString())
+                    .url(Constants.GET_SMALLER_IAMGE_URL + "?app_name=" + App.packageName + "&app_key=" + BPG.getDecodeString(timestamp, App.token) + "&image=" + uri.toString() + "&timestamp=" + timestamp + "&app_type=1")
                     .get()
                     .build();
 
@@ -178,8 +180,7 @@ public class OkHttpNetworkFetcher extends
                 if (contentLength < 0) {
                     contentLength = 0;
                 }
-                Log.e("wanglei", "response:" + response.toString());
-                if (Constants.RESOURCE_TAG.equals(response.headers().get("Content-Type"))) {
+                if (Constants.RESOURCE_TAG.equals(response.request().url().host())) {
                     //特殊处理
                     InputStream stream = null;
                     byte[] decBuffer = null;

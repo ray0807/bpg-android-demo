@@ -105,15 +105,15 @@ public class PicassoOk3Downloader implements Downloader {
 //                .add("app_key", App.token)
 //                .add("image", uri.toString())
 //                .build();
-
-        Request request = new Request.Builder().cacheControl(new CacheControl.Builder().build()).url(Constants.GET_SMALLER_IAMGE_URL + "?app_name=" + App.packageName + "&app_key=" + App.token + "&image=" + uri.toString()).get().build();
+        String timestamp = System.currentTimeMillis() / 1000 + "";
+        Request request = new Request.Builder().cacheControl(new CacheControl.Builder().build()).url(Constants.GET_SMALLER_IAMGE_URL + "?app_name=" + App.packageName + "&app_key=" + BPG.getDecodeString(timestamp, App.token) + "&image=" + uri.toString() + "&timestamp=" + timestamp + "&app_type=1").get().build();
         okhttp3.Response response = client.newCall(request).execute();
 
 
         ResponseBody responseBody = response.body();
         InputStream inputStream = responseBody.byteStream();
         int contentLength = (int) responseBody.contentLength();
-        if (Constants.RESOURCE_TAG.equals(response.header("Content-Type"))) {
+        if (Constants.RESOURCE_TAG.equals(response.request().url().host())) {
             Log.e("wanglei", "解压特殊图片");
             //特殊处理
             InputStream stream = null;

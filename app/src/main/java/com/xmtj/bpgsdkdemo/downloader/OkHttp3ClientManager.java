@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.StatFs;
 import android.util.Log;
 
+import com.xmtj.bpgsdkdemo.config.HttpLoggingInterceptor;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -56,7 +58,6 @@ public class OkHttp3ClientManager {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 okhttp3.Response originalResponse = chain.proceed(chain.request());
-                Log.e("wanglei", "originalResponse:" + originalResponse.headers().toString());
                 return originalResponse.newBuilder()
                         .removeHeader("Pragma")
                         .header("Cache-Control", String.format("max-age=%d", 604800))//本地sd卡缓存7天
@@ -65,6 +66,7 @@ public class OkHttp3ClientManager {
         };
         okHttpClient = new OkHttpClient.Builder()
                 .cache(new okhttp3.Cache(cacheDir, maxSize))
+                .addInterceptor(new HttpLoggingInterceptor())
                 .addNetworkInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
                 .build();
 
