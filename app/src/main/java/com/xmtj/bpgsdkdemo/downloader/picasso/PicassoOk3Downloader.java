@@ -121,11 +121,18 @@ public class PicassoOk3Downloader implements Downloader {
                 stream = new ContentLengthInputStream(inputStream, contentLength);
                 byte[] decBuffer = DecoderWrapper.decodeBpgBuffer(stream);
                 //解码器注册失败重新注册
-                if (null != stream && (null == decBuffer || decBuffer.length == 0)) {
+                if (null == decBuffer) {
 //                    if (!DecoderWrapper.getInitState()) {
 //                        BPG.init(context);
 //                    }
-                    return new Response(inputStream, response.cacheResponse() != null, contentLength);
+                    //重新请求
+                    Request req = new Request.Builder().url(uri.toString()).get().build();
+                    okhttp3.Response res = client.newCall(req).execute();
+                    ResponseBody rb = res.body();
+                    InputStream is = rb.byteStream();
+                    int length = (int) rb.contentLength();
+                    return new Response(is, response.cacheResponse() != null, length);
+
                 }
                 Log.e("wanglei", "解压成功");
                 return new Response(new ByteArrayInputStream(decBuffer), response.cacheResponse() != null, decBuffer.length);

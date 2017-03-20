@@ -86,11 +86,18 @@ public class OkHttpImageDownloader extends BaseImageDownloader {
                 stream = new ContentLengthInputStream(inputStream, contentLength);
                 byte[] decBuffer = DecoderWrapper.decodeBpgBuffer(stream);
                 //解码器注册失败重新注册
-                if (null != stream && (null == decBuffer || decBuffer.length == 0)) {
+                if (null == decBuffer) {
                     if (!DecoderWrapper.getInitState()) {
                         BPG.init(context);
                     }
-                    return new ContentLengthInputStream(inputStream, contentLength);
+                    //重新请求
+                    Request req = new Request.Builder().url(imageUri).get().build();
+                    Response res = client.newCall(req).execute();
+                    ResponseBody rb = res.body();
+                    InputStream is = rb.byteStream();
+                    int length = (int) rb.contentLength();
+                    return new ContentLengthInputStream(is, length);
+
                 }
                 return new ByteArrayInputStream(decBuffer);
             } catch (Exception e) {
