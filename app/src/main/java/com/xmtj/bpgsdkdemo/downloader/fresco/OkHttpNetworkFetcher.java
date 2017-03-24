@@ -186,12 +186,10 @@ public class OkHttpNetworkFetcher extends
                     byte[] decBuffer = null;
                     try {
                         stream = new ContentLengthInputStream(body.byteStream(), (int) contentLength);
-                        decBuffer = DecoderWrapper.decodeBpgBuffer(stream);
+                        decBuffer = BPG.decodeBpgBuffer(stream);
                         //解码器注册失败重新注册
                         if (null == decBuffer) {
-//                            if (!DecoderWrapper.getInitState()) {
-//                                BPG.init(context);
-//                            }
+                            //BPG.init(context);
                             //重新请求
                             Request req = new Request.Builder().url(fetchState.getUri().toString()).get().build();
                             Response res = client.newCall(req).execute();

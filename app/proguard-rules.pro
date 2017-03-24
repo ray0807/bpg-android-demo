@@ -17,3 +17,6 @@
 #}
 
 -keep class com.xmtj.bpgsdkdemo.downloader.glide.OkHttpGlideModule
+#BPG 混淆控制
+-dontwarn com.xmtj.bpgdecoder.**
+-keep public class com.xmtj.bpgdecoder.**{*;}

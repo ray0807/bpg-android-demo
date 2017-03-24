@@ -92,13 +92,10 @@ public class OkHttpStreamFetcher implements DataFetcher<InputStream> {
             InputStream decoderStream = null;
             try {
                 decoderStream = new ContentLengthInputStream(stream, contentLength);
-                byte[] decBuffer = DecoderWrapper.decodeBpgBuffer(decoderStream);
-                //解码器注册失败重新注册
+                byte[] decBuffer = BPG.decodeBpgBuffer(decoderStream);
                 //解码器注册失败重新注册
                 if (null == decBuffer) {
-//                    if (!DecoderWrapper.getInitState()) {
-//                        BPG.init(context);
-//                    }
+                    //BPG.init(context);
                     //重新请求
                     Request req = new Request.Builder().url(url.toStringUrl()).get().build();
                     Response res = client.newCall(req).execute();
